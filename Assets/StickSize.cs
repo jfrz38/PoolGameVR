@@ -59,7 +59,6 @@ public class StickSize : MonoBehaviour
     private Vector3 GetMousePosition()
     {
         Vector3 mouse = Input.mousePosition;
-        
         Ray castPoint = camera.ScreenPointToRay(mouse);
         RaycastHit hit;
         if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
