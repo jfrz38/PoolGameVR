@@ -17,18 +17,18 @@ Se ha añadido:
 
 Cómo "jugar":
 
-Se inicia el juego y el usuario decide el tamaño que tendrá el palo:
+#### Se inicia el juego y el usuario decide el tamaño que tendrá el palo:
 1. El tamaño es la distancia entre el ratón y la cámara
 2. Cuando se decide el tamaño se pulsa click derecho.
-En el juego real sería:
+#### En el juego real sería:
 1. El tamaño es la distancia entre la mano reconocida y el controlador sostenido en la otra mano
 2. Cuando se decide el tamaño se pulsa un botón del controlador
 
-Con el tamaño elegido (y antes de elegirlo también) el usuario puede moverse por la escena:
+#### Con el tamaño elegido (y antes de elegirlo también) el usuario puede moverse por la escena:
 1. Con las teclas (ASDW) se gira la vista
 2. Con las felchas de dirección (←↑↓→) se mueve la posición de la cámara
 3. Con el teclado numérico (2468) se mueve el palo.
-En el juego real sería:
+#### En el juego real sería:
 1. Mover la cabeza
 2. Mover el cuerpo (la posición del cuerpo)
 3. Mover las manos
