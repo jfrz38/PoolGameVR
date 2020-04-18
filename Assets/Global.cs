@@ -9,15 +9,22 @@ public class Global
 {
     public static List<Ball> bolas = new List<Ball>();
 
+    public static List<string> textoInstrucciones = new List<string>
+    {
+        "Elige tamaño del palo y pulsa click derecho",
+        "1. Muévete con las flechas de dirección.\n2. Gira la vista y mira a tu alrededor con WASD.\n3. Mueve el palo adelante y atrás con el teclado numérico",
+        "Texto3"
+    };
+
     public static void InsertBall(Ball bola)
     {
         bolas.Add(bola);
         UpdateText(bola);
     }
 
-    public static void InsertBall(int numero,TipoBola tipo)
+    public static void InsertBall(int numero, TipoBola tipo)
     {
-        InsertBall(new Ball { tipo=tipo, numero = numero });
+        InsertBall(new Ball { tipo = tipo, numero = numero });
     }
 
     public static void UpdateText(Ball bola)
@@ -26,7 +33,7 @@ public class Global
         text.text = "Bola introducida: nº " + bola.numero + " ; tipo = " + bola.tipo.ToString();
         if (bola.tipo == TipoBola.Lisa)
         {
-            
+
             var textMesh = GameObject.Find("TextLisas").GetComponent<TextMeshPro>();
             textMesh.text = ToString(TipoBola.Lisa);
         }
@@ -36,18 +43,30 @@ public class Global
             var textMesh = GameObject.Find("TextRayadas").GetComponent<TextMeshPro>();
             textMesh.text = ToString(TipoBola.Rayada);
         }
-        
-        
+
+
     }
 
     public static string ToString(TipoBola tipo)
     {
-        List<Ball> balls = bolas.Where(b => b.tipo == tipo).OrderBy(b=>b.numero).ToList();
+        List<Ball> balls = bolas.Where(b => b.tipo == tipo).OrderBy(b => b.numero).ToList();
         string list = "";
-        foreach(Ball ball in balls)
+        foreach (Ball ball in balls)
         {
-            list += ball.numero + ". ";
+            list += ball.numero + ".\n";
         }
         return list;
     }
+
+    public static void InstructionsText(TipoTexto texto)
+    {
+        var textMesh = GameObject.Find("Instrucciones_2").GetComponent<TextMeshPro>();
+        textMesh.text = textoInstrucciones[(int)texto];
+    }
+}
+
+public enum TipoTexto
+{
+    StickSize,
+    MovementInstructions
 }

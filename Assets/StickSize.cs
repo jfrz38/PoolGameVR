@@ -13,6 +13,7 @@ public class StickSize : MonoBehaviour
     {
         camera = Camera.main;
         hasDecided = false;
+        Global.InstructionsText(TipoTexto.StickSize);
     }
     void Update()
     {
@@ -43,6 +44,7 @@ public class StickSize : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
                 hasDecided = true;
+                Global.InstructionsText(TipoTexto.MovementInstructions);
             }
         }
 
