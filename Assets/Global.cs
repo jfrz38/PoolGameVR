@@ -12,8 +12,7 @@ public class Global
     public static List<string> textoInstrucciones = new List<string>
     {
         "Elige tamaño del palo y pulsa click derecho",
-        "1. Muévete con las flechas de dirección.\n2. Gira la vista y mira a tu alrededor con WASD.\n3. Mueve el palo adelante y atrás con el teclado numérico",
-        "Texto3"
+        "1. Muévete con las flechas de dirección.\n2. Gira la vista y mira a tu alrededor con WASD.\n3. Mueve el palo adelante y atrás con el teclado numérico"
     };
 
     public static void InsertBall(Ball bola)
@@ -29,8 +28,8 @@ public class Global
 
     public static void UpdateText(Ball bola)
     {
-        var text = GameObject.Find("Text").GetComponent<Text>();
-        text.text = "Bola introducida: nº " + bola.numero + " ; tipo = " + bola.tipo.ToString();
+        //var text = GameObject.Find("Text").GetComponent<Text>();
+        //text.text = "Bola introducida: nº " + bola.numero + " ; tipo = " + bola.tipo.ToString();
         if (bola.tipo == TipoBola.Lisa)
         {
 
