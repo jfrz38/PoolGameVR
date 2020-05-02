@@ -8,6 +8,7 @@ public class FloorCollisionScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Ball ball = collision.gameObject.GetComponent<Ball>();
-        ball.transform.position = new Vector3(-1.78f, 1.99f, -3.24f);
+        if (ball)
+            ball.transform.position = new Vector3(-1.78f, 1.99f, -3.24f);
     }
 }

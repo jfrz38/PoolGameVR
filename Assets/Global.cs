@@ -62,6 +62,7 @@ public class Global
         var textMesh = GameObject.Find("Instrucciones_2").GetComponent<TextMeshPro>();
         textMesh.text = textoInstrucciones[(int)texto];
     }
+
 }
 
 public enum TipoTexto

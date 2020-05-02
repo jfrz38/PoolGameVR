@@ -6,12 +6,14 @@ using UnityEngine;
 public class StickSize : MonoBehaviour
 {    // Update is called once per frame
 
-    private new Camera camera;
+    //private Camera camera;
     private bool hasDecided;
+    GameObject leftHand;
 
     private void Start()
     {
-        camera = Camera.main;
+        leftHand = GameObject.Find("basic_rig L Hand");
+        //camera = GameObject.Find("OVRCameraRig").GetComponent<OVRCameraRig>().leftEyeCamera;//Camera.main;//GameObject.Find("OVRCameraRig");//.GetComponent<Camera>();//Camera.main;
         hasDecided = false;
         Global.InstructionsText(TipoTexto.StickSize);
     }
@@ -22,6 +24,7 @@ public class StickSize : MonoBehaviour
         var cameraPosition = GameObject.Find("OVRRightHandPrefab").transform.position;// + offset;
         Debug.DrawLine(cameraPosition, new Vector3(0, 0, 0), Color.yellow);
         var handPosition = GetHandPosition();
+        //leftHand.transform.localPosition = handPosition;
 
         //Dirección y distancia entre dos objetos
         var heading = cameraPosition - handPosition;
@@ -61,7 +64,7 @@ public class StickSize : MonoBehaviour
     private Vector3 GetMousePosition()
     {
         Vector3 mouse = Input.mousePosition;
-        Ray castPoint = camera.ScreenPointToRay(mouse);
+        Ray castPoint = Camera.main.ScreenPointToRay(mouse);
         RaycastHit hit;
         if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
         {
