@@ -32,3 +32,6 @@ Cómo "jugar":
 1. Mover la cabeza
 2. Mover el cuerpo (la posición del cuerpo)
 3. Mover las manos
+
+![Captura del juego](https://i.gyazo.com/60c8cafb543c7d3d0c33a0b45139021f.png)
+
